@@ -1,43 +1,36 @@
-import React from 'react';
-import {StyleSheet, TouchableOpacity, Image, View } from 'react-native';
-import coffeeHome from '../../images/coffeeHome.jpg'
+import React, { useEffect, useState } from 'react';
+import Navbar from '../../Navbar/Navbar';
+import SearchCoffee from '../../SearchCoffee/SearchCoffee';
+import SearchTea from '../../SearchCollection/SearchCollection';
 
+import SocialMedia from '../../SocialMedia/SocialMedia';
+import DisplayTime from '../../DisplayScreen/DisplayTime';
 
+import './HomeScreenElements.css'
+import Axios from 'axios';
+import Comment from '../../Comment/Comment';
+import Coffee from '../../Coffee/Coffee';
 
 const HomeScreen = ( { navigation } ) => {
-
-    const onPressHandlerLoginScreen = () => {
-    navigation.navigate('LoginScreen');
-  }
+  
+  const [posts, setPosts] = useState([]);
 
   return (
-    <View >
-      <TouchableOpacity onPress={onPressHandlerLoginScreen}>
-         <Image 
-         style={styles.image}
-         source={coffeeHome}
-         />
-         
-      </TouchableOpacity>
-    </View>
+      <div>
+           <div className="container"> 
+            <div className="row">
+               <SearchCoffee />
+               {/* <SearchTea />  */}
+            </div>
+          </div>
+         {/* <Coffee />  */}      
+          {/* <DisplayTime /> */}
+          {/* <Comment /> */}
+        {/* <SocialMedia /> */}
+      </div>
+
   );
 };
-
-const styles = StyleSheet.create({
-     imgContainer: {
-        flexDirection: 'row'
-    },
-  image: {
-    flex: 1,
-    aspectRatio: 1,
-    alignSelf: 'stretch',
-    width: "cover",
-    resizeMode: "cover",
-  
-  },
-
-});
-
 
 export default HomeScreen;
 

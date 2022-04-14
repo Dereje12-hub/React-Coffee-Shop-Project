@@ -1,0 +1,34 @@
+.search {
+    width: 30%;
+}
+
+.container {
+    width: fit-content;
+}
+.row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+.block {
+  background-color: #df8164;
+  padding: 50px;
+  margin: 0rem;
+  border-radius: 0.2rem;
+  content: 0.2rem;
+}  
+
+.scroller {
+  text-align: left;
+  width: auto;
+  height: auto;
+  overflow-y: scroll;
+  display: flex;
+  box-sizing: border-box;
+  border: 1px solid rgb(243, 239, 239);
+  scroll-snap-type: x mandatory;
+  background-color: rgba(57, 99, 48, 0.938);
+} 
+
+

@@ -1,0 +1,25 @@
+.search {
+    width: 30%;
+}
+
+.container {
+    width: fit-content;
+    /* background-color: rgba(0, 0, 0, 0.911); */
+} 
+.row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+
+/* .block {
+  background-color: #c44a4a;
+  padding: 50px;
+  margin: 5rem;
+  border-radius: 0.5rem;
+  content: 0.4rem;
+}  */
+
+
+

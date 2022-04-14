@@ -19,7 +19,7 @@ import coffeeLogo from '../../images/coffeeLogo.png'
 import coffeeKey from '../../images/coffeeee.jpg'
 
 
-const RegistrationScreen = ({ navigation }) => {
+const RegistrationScreen = () => {
   const [lastnameReg, setLastnameReg] = useState("");
   const [firstnameReg, setFirstnameReg] = useState("");
   const [employeeStartDate, setEmployeeStartDate] = useState("");
@@ -42,21 +42,21 @@ const RegistrationScreen = ({ navigation }) => {
           setRegisterStatus("Your password length must be above 4!");
        }
         else{
-            Axios.post("http://localhost:4000/register", {
+            Axios.post("http://localhost:4000/app/register", {
               lastname: lastnameReg,
               firstname: firstnameReg,
               username: username,
               password: password,
               email: email,
-              startDate: employeeStartDate,
+              //startDate: employeeStartDate,
 
             }).then((response) => {
               //console.log("Registry is successful!");
-              console.log(response);
+              console.log(response.data);
             })
           console.log("Registration is successful!");
-          console.log("Return back to login page");
-          navigation.navigate('LoginScreen');
+        //  console.log("Return back to login page");
+        //  navigation.navigate('LoginScreen');
           }    
   };
 
@@ -65,14 +65,16 @@ const RegistrationScreen = ({ navigation }) => {
 
   // }
   
-   useEffect(() => {
-     Axios.get("http://localhost:4000/register").then((response) => {
-       if (response.data.registerIn == true) {
-         setRegisterStatus(false);   
-         navigation.navigate('RegistrationScreen');
-       }
-     });
-   }, []);
+
+
+  //  useEffect(() => {
+  //    Axios.get("http://localhost:4000/register").then((response) => {
+  //      if (response.data.registerIn == true) {
+  //        setRegisterStatus(false);   
+  //        navigation.navigate('RegistrationScreen');
+  //      }
+  //    });
+  //  }, []);
 
     
   return (

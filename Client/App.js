@@ -1,55 +1,42 @@
 import React from 'react'
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import HomeScreen from './src/Screens/HomeScreen/HomeScreen';
-import LoginScreen from './src/Screens/LoginScreen/LoginScreen';
-import WelcomeScreen from './src/Screens/WelcomeScreen/WelcomeScreen';
-import ShopScreen from './src/Screens/ShopScreen/ShopScreen';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route
+} from "react-router-dom";
+//import SignUp from './pages/signup'
+import HomeScreen from './src/Screens/HomeScreen/HomeScreen'
+import LoginScreen from './src/Screens/LoginScreen/LoginScreen'
+import SocialMedia from './src/SocialMedia/SocialMedia';
+import './App.css';
+import About from './src/Navbar/NavbarMenu/About';
+import Navbar from './src/Navbar/Navbar';
 import RegistrationScreen from './src/Screens/RegistrationScreen/RegistrationScreen';
+import SearchCoffee from './src/SearchCoffee/SearchCoffee';
+import SearchCollection from './src/SearchCollection/SearchCollection';
+import HomeCollection from './src/HomeCollection/HomeCollection';
 
-
-const Stack = createStackNavigator();
-
- const App = () => {
+const App = () => {
 
   return (
-    //<Provide store = {store} > 
-      <NavigationContainer>
-        <Stack.Navigator>
-          
-        <Stack.Screen 
-            name="HomeScreen" 
-            component={ HomeScreen } 
-            options={{ headerShown: null }} 
-          /> 
- 
-           <Stack.Screen 
-            name="LoginScreen" 
-            component={ LoginScreen } 
-            options={{ headerShown: null }} 
-          />       
-          
-           <Stack.Screen 
-            name="WelcomeScreen" 
-            component={ WelcomeScreen } 
-            options={{ headerShown: null }}  
-          />                                                
-          <Stack.Screen 
-            name="ShopScreen" 
-            component={ ShopScreen } 
-            options={{ headerShown: null }} 
-          />
-              <Stack.Screen 
-              name="RegistrationScreen" 
-              component={ RegistrationScreen } 
-              options={{ headerShown: null }} 
-          /> 
+
+   <Router>
+      <Navbar /> 
+     <Routes>
+        <Route path='/'element={<HomeCollection />} />    
+        {/* <Route path="/search" element={<SearchCollection />} />    */}
+        <Route path="/about" element={<About />} />  
+        <Route path="/signin" element={<LoginScreen />} />
+        <Route path="/register" element={<RegistrationScreen />} />
+       {/* <Route path="/map" element={<mapScreen />} />   */}
+        {/* <Route path="/" element={<SocialMedia /> } />
+    */}
+     </Routes>
+     
   
-        </Stack.Navigator>
-      </NavigationContainer>
-   //</Provide>
+   </Router>
+
   )
 };
 
 export default App;
-

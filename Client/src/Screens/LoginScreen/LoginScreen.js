@@ -15,10 +15,10 @@ import {
 import coffeeLogo from '../../images/coffeeLogo.png'
 import coffeeKey from '../../images/coffeeKey.jpg'
 import RegistrationScreen from '../RegistrationScreen/RegistrationScreen';
-import WelcomeScreen from '../WelcomeScreen/WelcomeScreen';
+//import WelcomeScreen from '../WelcomeScreen/WelcomeScreen';
 
 
-const LoginScreen = ({ navigation, setToken }) => {
+const LoginScreen = () => {
 
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -37,10 +37,10 @@ const LoginScreen = ({ navigation, setToken }) => {
    };
 
 
-   function Register(){
-      console.log("Go to Registry Screen!");
-      navigation.navigate('RegistrationScreen');
-   }
+  //  function Register(){
+  //     console.log("Go to Registry Screen!");
+  //     //navigation.navigate('RegistrationScreen');
+  //  }
 
   
   const AuthenticateUserPassword = () => {
@@ -49,8 +49,8 @@ const LoginScreen = ({ navigation, setToken }) => {
              setShowMessage("check the size of username input!");
          }
          else{
-      
-          Axios.post("http://localhost:4000/login", {
+         
+          Axios.post("http://localhost:4000/app/login", {
             username: username,
             password: password,          
 
@@ -64,7 +64,7 @@ const LoginScreen = ({ navigation, setToken }) => {
               //setLoginStatus(response.data[0].username);
               //setLoginStatus('YES');
               console.log(response.data[0].username, ' logged in'); 
-              navigation.navigate('WelcomeScreen');
+              //navigation.navigate('WelcomeScreen');
             
 
             }
@@ -116,16 +116,17 @@ const LoginScreen = ({ navigation, setToken }) => {
       
       <div> 
         <Button 
-          onPress= {() => AuthenticateUserPassword()}
+          //onPress= {() => AuthenticateUserPassword()}
           title="Submit"
           color="green"
           /> 
 
-          <Button 
-          onPress= {() => Register()}
+          {/* <Button 
+          // onPress= {() => Register()}
+          onPress= {() => <RegistrationScreen />}
           title="SignUp"
           color="black"
-        /> 
+        />  */}
        </div>  
           <div>                                                
              <h1 style={{ color: 'RED' }}>{showMessage}</h1> 

@@ -1,0 +1,18 @@
+.search {
+    width: 30%;
+}
+
+.container {
+    width: fit-content;
+    /* background-color: rgba(0, 0, 0, 0.911); */
+} 
+.row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+
+
+
+

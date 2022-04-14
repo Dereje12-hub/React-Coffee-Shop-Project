@@ -1,0 +1,1 @@
+{"ast":null,"code":"module.exports = require(\"../build/paths\");","map":{"version":3,"sources":["C:/Users/Dereje/node_modules/@expo/config/paths/index.js"],"names":["module","exports","require"],"mappings":"AAAAA,MAAM,CAACC,OAAP,GAAiBC,OAAO,kBAAxB","sourcesContent":["module.exports = require('../build/paths');\n"]},"metadata":{},"sourceType":"script"}

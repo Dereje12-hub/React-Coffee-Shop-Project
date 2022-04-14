@@ -1,0 +1,58 @@
+.search {
+    width: 30%;
+}
+
+/* .social-container {
+    width: fit-content;
+    padding: 25px 50px;
+} */
+
+.social-container {
+    text-align: center;
+    /* background: rgba(160, 50, 50, 0.904); */
+    padding: 50px;
+    width: fit-content;
+    justify-content: center; 
+    justify-items: center;
+}
+.social-block {
+  background-color: #e9eff0;
+  padding: 50px;
+  margin: 0rem;
+  border-radius: 0.2rem;
+  content: 0.2rem;
+}  
+
+a.social {
+
+  margin: 0 1rem;
+  transition: transform 250ms;
+  display: inline-block;
+  justify-content: center;
+}
+
+.row {
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+a.youtube {
+  color: #eb3223;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
+a.twitter {
+  color: #49a1eb;
+}
+
+a.instagram {
+  color: rgb(134, 8, 8);
+}
